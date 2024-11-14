@@ -1,5 +1,7 @@
 import logo from "../../assets/logo.png";
 import moment from "moment";
+moment.locale('af');
+// import moment from './../../../node_modules/moment/dist/locale/af';
 
 const Header = () => {
   return (
