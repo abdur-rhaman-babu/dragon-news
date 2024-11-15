@@ -54,7 +54,7 @@ const Navbar = () => {
       </div>
       <div className="navbar-end flex items-center gap-2  ">
       <IoIosContact size={50}/>
-        <Link to='/login' className="btn btn-neutral">Login</Link>
+        <Link to='/auth/login' className="btn btn-neutral">Login</Link>
       </div>
     </div>
   );

@@ -9,11 +9,11 @@ const NewsDetail = ({ news }) => {
   const { image_url, author, details, title, rating, total_view, _id } = news;
   return (
     <div>
-      <div className="fixed top-0 left-0 right-0 bg-white max-w-7xl mx-auto">
+      <div className="fixed top-0 left-0 right-0 bg-white">
         <Header />
       </div>
-     <div className="flex mt-44 w-11/12 mx-auto">
-     <div className=" mx-auto w-8/12 my-5 bg-white border border-gray-300 rounded-lg shadow-md p-4">
+     <div className="flex flex-col-reverse md:flex-row mt-44 w-11/12 mx-auto">
+     <div className=" mx-auto lg:w-8/12 my-5 bg-white border border-gray-300 rounded-lg shadow-md p-4">
     
         <div className="flex items-center mb-3 bg-base-300 p-2">
           <img
@@ -63,7 +63,7 @@ const NewsDetail = ({ news }) => {
           </div>
         </div>
       </div>
-      <div className="w-3/12 mx-auto">
+      <div className="lg:w-3/12 mx-auto">
         <NavbarRight />
       </div>
      </div>

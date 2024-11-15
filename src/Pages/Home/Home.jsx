@@ -13,13 +13,13 @@ const Home = () => {
         <Navbar />
       </div>
       <main className="lg:flex justify-between max-w-7xl mx-auto my-5 mt-80">
-        <div className="w-3/12 mx-auto">
+        <div className="lg:w-3/12 mx-auto">
           <NavbarLeft />
         </div>
-        <div className="w-6/12 mx-auto">
+        <div className="lg:w-6/12 mx-auto h-[100vh] overflow-y-auto">
           <Outlet />
         </div>
-        <div className="w-3/12 mx-auto">
+        <div className="lg:w-3/12 mx-auto">
           <NavbarRight />
         </div>
       </main>
