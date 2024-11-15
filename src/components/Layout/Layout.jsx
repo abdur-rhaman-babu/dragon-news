@@ -1,10 +1,11 @@
 import { CiBookmark } from "react-icons/ci";
 import { FaEye, FaStar } from "react-icons/fa";
 import { GoShareAndroid } from "react-icons/go";
+import { Link } from "react-router-dom";
 
 const Layout = ({ news }) => {
   // console.log(news);
-  const { image_url, author, details, title, rating, total_view } = news;
+  const { image_url, author, details, title, rating, total_view, _id } = news;
   return (
     <div className="max-w-lg mx-auto bg-white border border-gray-300 rounded-lg shadow-md p-4">
       {/* Author and Date */}
@@ -20,8 +21,8 @@ const Layout = ({ news }) => {
         </div>
         <button className="ml-auto text-gray-500 hover:text-gray-700">
           <div className="flex items-center gap-2 text-2xl">
-          <CiBookmark />
-          <GoShareAndroid />
+            <CiBookmark />
+            <GoShareAndroid />
           </div>
         </button>
       </div>
@@ -36,9 +37,9 @@ const Layout = ({ news }) => {
 
       {/* Tags and Excerpt */}
       <p className="text-gray-500 text-sm mb-3">{details}</p>
-      <a href="#" className="text-blue-600 font-semibold">
-        Read More
-      </a>
+      <Link to={`/news/${_id}`}>
+        <button className="text-blue-600 font-semibold">Read More</button>
+      </Link>
 
       {/* Rating and Views */}
       <div className="flex items-center justify-between mt-3">

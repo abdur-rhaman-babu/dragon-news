@@ -16,7 +16,7 @@ const Home = () => {
         <div className="w-3/12 mx-auto">
           <NavbarLeft />
         </div>
-        <div className="w-6/12 mx-auto mb-5 ">
+        <div className="w-6/12 mx-auto">
           <Outlet />
         </div>
         <div className="w-3/12 mx-auto">
