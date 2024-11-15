@@ -1,15 +1,10 @@
-import Header from "../Header/Header";
-import MainLayout from "../MainLayout/MainLayout";
-import Navbar from "../Navbar/Navbar";
-import NewsLetter from "../NewsLetter/NewsLetter";
+import { Outlet } from "react-router-dom";
+import Home from "../../Pages/Home/Home";
 
 const Root = () => {
     return (
-        <div className="max-w-7xl mx-auto font-poppins">
-            <Header/>
-            <NewsLetter/>
-            <Navbar/>
-            <MainLayout/>
+        <div>
+            <Outlet/>
         </div>
     );
 };

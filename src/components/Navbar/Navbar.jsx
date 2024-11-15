@@ -1,3 +1,4 @@
+import { IoIosContact } from "react-icons/io";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
@@ -51,7 +52,8 @@ const Navbar = () => {
           </li>
         </ul>
       </div>
-      <div className="navbar-end">
+      <div className="navbar-end flex items-center gap-2  ">
+      <IoIosContact size={50}/>
         <Link to='/login' className="btn btn-neutral">Login</Link>
       </div>
     </div>

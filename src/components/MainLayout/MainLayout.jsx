@@ -1,11 +1,8 @@
-import Header from "../Header/Header";
-import Navbar from "../Navbar/Navbar";
-import NewsLetter from "../NewsLetter/NewsLetter";
-
 const MainLayout = () => {
+    
     return (
-        <div className="max-w-7xl mx-auto font-poppins">
-            
+        <div className="">
+            <h1>Main Layout</h1>
         </div>
     );
 };
