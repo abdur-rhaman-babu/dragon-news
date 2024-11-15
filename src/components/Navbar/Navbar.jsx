@@ -1,7 +1,10 @@
+import { useContext } from "react";
 import { IoIosContact } from "react-icons/io";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+  const {user} = useContext(AuthContext)
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -37,7 +40,7 @@ const Navbar = () => {
             </li>
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl"></a>
+        <a className="btn btn-ghost text-xl">{user}</a>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
