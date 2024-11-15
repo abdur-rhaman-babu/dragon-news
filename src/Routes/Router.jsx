@@ -2,6 +2,7 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 import Root from "../components/Root/Root";
 import NewsCategory from "./../components/NewsCategory/NewsCategory";
 import Home from './../Pages/Home/Home';
+import Login from "../components/Login/Login";
 
 export const router = createBrowserRouter([
   {
@@ -13,7 +14,7 @@ export const router = createBrowserRouter([
         element:<Home/>,
         children:[
           {
-            path:'',
+            path:'/',
             element: <Navigate to='/category/01'></Navigate>
           },
 
@@ -26,6 +27,10 @@ export const router = createBrowserRouter([
               ),
           },
         ]
+      },
+      {
+        path:'/login',
+        element:<Login/>
       }
         
     ],
