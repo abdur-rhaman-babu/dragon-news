@@ -56,7 +56,11 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end flex items-center gap-2  ">
-        <IoIosContact size={50} />
+        {
+          user && user?.email ? <div>
+            {user?.photoURL} 
+          </div> : <IoIosContact size={50} />
+        }
         {user && user?.email ? (
           <button onClick={logoutUser}  className="btn btn-neutral">
             Logout
