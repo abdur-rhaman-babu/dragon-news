@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Login = () => {
 const {loginUser, setUser} = useContext(AuthContext)
+const navigate = useNavigate()
 const handleSubmit = (e) =>{
   e.preventDefault()
   const email = e.target.email.value;
@@ -17,6 +18,7 @@ const handleSubmit = (e) =>{
   .catch((error)=>{
     alert('ERROR', error.code)
   })
+  navigate('/')
 }
   return (
     <div className="max-w-7xl mx-auto">

@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Register = () => {
   const { createUser, setUser } = useContext(AuthContext);
-
+  const navigate = useNavigate()
   const handleSubmit = (e) => {
     e.preventDefault();
     // const form = new FormData(e.target);
@@ -30,6 +30,7 @@ const Register = () => {
         const errorMessage = error.message;
         console.log(errorCode, errorMessage)
       });
+    navigate('/')
   };
   return (
     <div className="flex items-center justify-center min-h-screen">
