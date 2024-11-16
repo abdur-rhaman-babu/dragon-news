@@ -38,6 +38,9 @@ const Navbar = () => {
             <li>
               <NavLink to="/carrer">Carrer</NavLink>
             </li>
+            <li>
+              <NavLink to="/contact">Contact</NavLink>
+            </li>
           </ul>
         </div>
         <a className="btn btn-ghost text-xl">{user?.email}</a>
@@ -53,18 +56,21 @@ const Navbar = () => {
           <li>
             <NavLink to="/carrer">Carrer</NavLink>
           </li>
+          <li>
+            <NavLink to="/contact">Contact</NavLink>
+          </li>
         </ul>
       </div>
       <div className="navbar-end flex items-center gap-2  ">
-        {
-          user && user?.email ? <div>
-            {user?.photoURL} 
-          </div> : <IoIosContact size={50} />
-        }
         {user && user?.email ? (
-          <button onClick={logoutUser}  className="btn btn-neutral">
+          <img className="w-10 rounded-full" src={user?.photoURL} alt="" />
+        ) : (
+          <IoIosContact size={50} />
+        )}
+        {user && user?.email ? (
+          <button onClick={logoutUser} className="btn btn-neutral">
             Logout
-          </button> 
+          </button>
         ) : (
           <Link to="/auth/login" className="btn btn-neutral">
             Login

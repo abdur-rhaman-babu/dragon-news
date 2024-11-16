@@ -3,7 +3,7 @@ import NewsDetail from "../NewsDetail/NewsDetail";
 
 const NewsDetails = () => {
     const data = useLoaderData()
-    console.log(data.data)
+    // console.log(data.data)
     return (
         <div>
             {

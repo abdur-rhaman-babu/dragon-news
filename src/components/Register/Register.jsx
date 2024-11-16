@@ -10,11 +10,6 @@ const Register = () => {
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
-    // const form = new FormData(e.target);
-    // const name = form.get("name");
-    // const email = form.get("email");
-    // const photo = form.get("photo");
-    // const password = form.get('password')
 
     const name = e.target.name.value;
     if (name.length < 4) {
@@ -34,7 +29,7 @@ const Register = () => {
       return;
     }
     const photo = e.target.photo.value;
-    console.log(email, password);
+    // console.log(email, password);
 
     const profile = {
       displayName: name,
@@ -47,7 +42,7 @@ const Register = () => {
         setUser(newUser);
         updateProfileUser(profile)
         navigate("/");
-        console.log(result.user);
+        // console.log(result.user);
       })
       .catch(() => {
         setExsits("User already exsist");
