@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider/AuthProvider";
 
 const Navbar = () => {
-  const {user} = useContext(AuthContext)
+  const { user } = useContext(AuthContext);
   return (
     <div className="navbar bg-base-100">
       <div className="navbar-start">
@@ -56,8 +56,16 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end flex items-center gap-2  ">
-      <IoIosContact size={50}/>
-        <Link to='/auth/login' className="btn btn-neutral">Login</Link>
+        <IoIosContact size={50} />
+        {user && user?.email ? (
+          <button className="btn btn-neutral">
+            Logout
+          </button> 
+        ) : (
+          <Link to="/auth/login" className="btn btn-neutral">
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
