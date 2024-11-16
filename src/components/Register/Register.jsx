@@ -6,7 +6,7 @@ const Register = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [password, setPassword] = useState("");
   const [exsist, setExsits] = useState("");
-  const { createUser, setUser } = useContext(AuthContext);
+  const { createUser, setUser, updateProfileUser } = useContext(AuthContext);
   const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -36,10 +36,16 @@ const Register = () => {
     const photo = e.target.photo.value;
     console.log(email, password);
 
+    const profile = {
+      displayName: name,
+      photoURL: photo,
+    };
+
     createUser(email, password)
       .then((result) => {
         const newUser = result.user;
         setUser(newUser);
+        updateProfileUser(profile)
         navigate("/");
         console.log(result.user);
       })
@@ -89,7 +95,7 @@ const Register = () => {
               placeholder="enter your password"
             />
           </div>
-         
+
           {password ? (
             <div className="text-red-700 font-semibold">{password}</div>
           ) : exsist ? (
